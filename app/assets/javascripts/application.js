@@ -11,6 +11,18 @@
 // about supported directives.
 //
 //= require jquery.min
+//= require bootstrap.min
 //= require rails-ujs
 //= require turbolinks
-//= require bootstrap.min
+//= require jquery-ui
+
+
+$(function() {
+  $('#term').autocomplete({    
+    source: "/contacts/autocomplete",
+    minLength: 3,
+    select: function (event, ui) {
+      $('#term').val(ui.item.value);
+    }
+  });
+})

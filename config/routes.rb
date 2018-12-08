@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   #get 'contacts/:id/edit', to: 'contacts#edit', as: 'edit_contact'
   #patch 'contacts/:id/update', to: 'contacts#update', as: 'update_contact'
   #delete 'contacts/:id/destroy', to: 'contacts#destroy', as: 'destroy_contact'
-  resources :contacts, excep: [:show]
+  resources :contacts, excep: [:show] do
+    get 'autocomplete', on: :collection  
+  end
+
   root "contacts#index"
 
 
