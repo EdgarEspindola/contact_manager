@@ -58,6 +58,9 @@ GEM
     ffi (1.9.25-x86-mingw32)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    glyphicons-rails (0.1.2)
+      sass (~> 3.3)
+      sass-rails
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.8.0)
@@ -155,6 +158,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   coffee-script-source (= 1.8.0)
   faker (~> 1.6, >= 1.6.6)
+  glyphicons-rails (~> 0.1.2)
   jbuilder (~> 2.5)
   pg (>= 0.18, < 2.0)
   puma (~> 3.7)
