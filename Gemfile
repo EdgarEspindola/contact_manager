@@ -37,6 +37,8 @@ gem 'faker', '~> 1.6', '>= 1.6.6'
 #For Windows it works with CofferScript v1.8
 gem 'coffee-script-source', '1.8.0'
 
+gem 'kaminari', '~> 0.16.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
