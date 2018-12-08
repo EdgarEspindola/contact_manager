@@ -1,0 +1,107 @@
+<div class="card">
+    <div class="card-header">
+      <strong>Add Contact</strong>
+    </div>
+
+    <form action="/contacts/create" method="post">
+        <div class="card-body">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group row">
+                  <label for="name" class="col-sm-3 col-form-label">Name</label>
+                  <div class="col-sm-9">
+                    <input type="text" name="contact[name]" id="name" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="company" class="col-sm-3 col-form-label">Company</label>
+                  <div class="col-sm-9">
+                    <input type="text" name="contact[company]" id="company" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="email" class="col-sm-3 col-form-label">Email</label>
+                  <div class="col-sm-9">
+                    <input type="text" name="contact[email]" id="email" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="phone" class="col-sm-3 col-form-label">Phone</label>
+                  <div class="col-sm-9">
+                    <input type="text" name="contact[phone]" id="phone" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="name" class="col-sm-3 col-form-label">Address</label>
+                  <div class="col-sm-9">
+                    <textarea name="contact[address]" id="address" rows="3" class="form-control"></textarea>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="group" class="col-sm-3 col-form-label">Group</label>
+                  <div class="col-sm-5">
+                    <select name="contact[group]" id="group" class="form-control">
+                      <option value="">Select group</option>
+                      <% Group.all.each do |group| %>
+                          <option value="<%= group.id %>"><%= group.name %></option>
+                      <% end %>
+                    </select>
+                  </div>
+                  <div class="col-sm-3">
+                    <a href="#" id="add-group-btn" class="btn btn-default btn-block">Add Group</a>
+                  </div>
+                </div>
+
+                <div class="form-group row" id="add-new-group" style="display: none;">
+                  <div class="offset-md-3 col-md-8">
+                    <div class="input-group">
+                      <input type="text" name="new_group" id="new_group" class="form-control">
+                      <span class="input-group-btn">
+                        <a href="#" class="btn btn-default">
+                          <i class="glyphicon glyphicon-ok"></i>
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-md-4">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                  <div class="fileinput-new thumbnail" style="width: 150px; height: 150px;">
+                    <img src="http://placehold.it/150x150" alt="Photo">
+                  </div>
+                  <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                  <div class="text-center">
+                    <span class="btn btn-default btn-file">
+                      <span class="fileinput-new">Choose Photo</span>
+                      <span class="fileinput-exists">Change</span>
+                      <input type="file" name="...">
+                    </span>
+                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="card-footer text-muted">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                  <button type="submit" class="btn btn-primary">Save</button>
+                  <a href="#" class="btn btn-default">Cancel</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+  </div>
