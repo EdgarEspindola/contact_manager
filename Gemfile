@@ -38,6 +38,7 @@ gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'coffee-script-source', '1.8.0'
 
 gem 'kaminari', '>= 1.1.1'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
