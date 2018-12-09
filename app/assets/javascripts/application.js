@@ -15,8 +15,10 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery-ui
+//= require contacts
 
-$(function() {
+document.addEventListener("turbolinks:load", function(event) {
+
   $('#term').autocomplete({
     source: "/contacts/autocomplete",
     minLength: 3,
