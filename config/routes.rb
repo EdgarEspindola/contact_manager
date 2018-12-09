@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+
+  get 'home/index'
+
   devise_for :users
   #get 'contacts/index', as: "contacts"
   #get 'contacts/new', as:  "new_contact"
@@ -11,6 +15,8 @@ Rails.application.routes.draw do
   end
 
   post '/groups', to: 'groups#create'
+
+  get '/dashboard', to: 'dashboard#index'
 
   root "contacts#index"
 
