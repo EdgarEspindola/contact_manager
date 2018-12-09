@@ -4,12 +4,24 @@
 </div>
 <% end %>
 
-<div class="panel panel-default">
-  <table class="table">
-    <%= render @contacts %>
-  </table>
-</div>
-
-<div class="mx-auto">
-    <%= paginate @contacts %>  
+<div class="card">
+  <div class="card-header">
+    <div class="float-left">
+      <h4>All Contacts</h4>
+    </div>
+    <div class="float-right">
+      <%= link_to new_contact_path, class: "btn btn-outline-primary" do %>
+        <i class="fas fa-plus"></i>
+        Add Contact
+      <% end %>
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <%= render @contacts %>
+    </table>
+  </div>
+  <div class="card-footer">
+    <%= paginate @contacts %>
+  </div>
 </div>

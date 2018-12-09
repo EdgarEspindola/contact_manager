@@ -2,16 +2,31 @@
   <h5 class="my-0 mr-md-auto font-weight-normal text-uppercase navbar-brand">
     <%= link_to "My contact", root_path %>
   </h5>
-  <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href="#">Features</a>
-    <a class="p-2 text-dark" href="#">Enterprise</a>
-    <a class="p-2 text-dark" href="#">Support</a>
+  <nav class="mr-auto">
+    <a class="p-2 text-dark btn btn-light" href="#">Dashboard</a>
+    <a class="p-2 text-dark btn btn-light" href="#">All Contacts</a>
   </nav>
+
+  <% if user_signed_in? %>
 
   <%= render 'layouts/search_form' %>
 
-  <%= link_to new_contact_path, class: "btn btn-outline-primary" do %>
-    <i class="fas fa-plus"></i>
-    Add Contact
+  <nav class="my-2 my-md-0 mr-md-3">
+    <div class="dropdown">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown link
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
+        <%= link_to "Profile", destroy_user_session_path, class: "dropdown-item", method: :delete %>        
+      </div>
+    </div>
+  </nav>
+  <% else %>
+  <nav class="">
+    <%= link_to "Login", new_user_session_path, class: "p-2 text-dark btn btn-light" %>
+    <%= link_to "Register", new_user_registration_path, class: "p-2 text-dark btn btn-primary" %>
+  </nav>
   <% end %>
+
 </div>
