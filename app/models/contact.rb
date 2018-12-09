@@ -1,5 +1,6 @@
 class Contact < ApplicationRecord
   belongs_to :group
+  belongs_to :user
 
   paginates_per 10
 
@@ -15,7 +16,7 @@ class Contact < ApplicationRecord
   end
 
   scope :search, -> (term) do
-    where('LOWER(name) LIKE :term or LOWER(company) LIKE :term or LOWER(email) LIKE :term', term: "%#{term.downcase}%") if term.present? 
+    where('LOWER(name) LIKE :term or LOWER(company) LIKE :term or LOWER(email) LIKE :term', term: "%#{term.downcase}%") if term.present?
   end
 
   #def self.search(term)

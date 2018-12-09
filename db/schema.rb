@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181209012520) do
+ActiveRecord::Schema.define(version: 20181209213021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,11 +28,15 @@ ActiveRecord::Schema.define(version: 20181209012520) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.bigint "user_id"
     t.index ["group_id"], name: "index_contacts_on_group_id"
+    t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -55,4 +59,6 @@ ActiveRecord::Schema.define(version: 20181209012520) do
   end
 
   add_foreign_key "contacts", "groups"
+  add_foreign_key "contacts", "users"
+  add_foreign_key "groups", "users"
 end
