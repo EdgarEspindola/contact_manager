@@ -2,12 +2,11 @@
   <h5 class="my-0 mr-md-auto font-weight-normal text-uppercase navbar-brand">
     <%= link_to "My contact", root_path %>
   </h5>
+  <% if user_signed_in? %>
   <nav class="mr-auto">
     <%= link_to "Dashboard", dashboard_path, class: "#{active_item('dashboard')} p-2 text-dark btn btn-light" %>
     <%= link_to "All Contacts", contacts_path, class: "#{active_item('contacts')} p-2 text-dark btn btn-light" %>
   </nav>
-
-  <% if user_signed_in? %>
 
   <%= render 'layouts/search_form' %>
 
