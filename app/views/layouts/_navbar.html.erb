@@ -3,8 +3,8 @@
     <%= link_to "My contact", root_path %>
   </h5>
   <nav class="mr-auto">
-    <%= link_to "Dashboard", dashboard_path, class: "p-2 text-dark btn btn-light" %>
-    <%= link_to "All Contacts", contacts_path, class: "p-2 text-dark btn btn-light" %>  
+    <%= link_to "Dashboard", dashboard_path, class: "#{active_item('dashboard')} p-2 text-dark btn btn-light" %>
+    <%= link_to "All Contacts", contacts_path, class: "#{active_item('contacts')} p-2 text-dark btn btn-light" %>
   </nav>
 
   <% if user_signed_in? %>
