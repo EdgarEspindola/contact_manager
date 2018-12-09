@@ -1,27 +1,38 @@
-<% if @contacts.blank? %>
-<div class="alert alert-warning">
-  <strong>Record not found</strong>
-</div>
-<% end %>
+<div class="col-md-3">
+  <%= render 'layouts/sidebar' %>
+</div><!-- /.col-md-3 -->
 
-<div class="card">
-  <div class="card-header">
-    <div class="float-left">
-      <h4>All Contacts</h4>
+<div class="col-md-9">
+
+  <%= render 'layouts/messages' if !flash.empty? %>
+
+  <% if @contacts.blank? %>
+  <div class="alert alert-warning">
+    <strong>Record not found</strong>
+  </div>
+  <% end %>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="float-left">
+        <h4>All Contacts</h4>
+      </div>
+      <div class="float-right">
+        <%= link_to new_contact_path, class: "btn btn-outline-primary" do %>
+          <i class="fas fa-plus"></i>
+          Add Contact
+        <% end %>
+      </div>
     </div>
-    <div class="float-right">
-      <%= link_to new_contact_path, class: "btn btn-outline-primary" do %>
-        <i class="fas fa-plus"></i>
-        Add Contact
-      <% end %>
+    <div class="card-body">
+      <table class="table">
+        <%= render @contacts %>
+      </table>
+    </div>
+    <div class="card-footer">
+      <%= paginate @contacts %>
     </div>
   </div>
-  <div class="card-body">
-    <table class="table">
-      <%= render @contacts %>
-    </table>
-  </div>
-  <div class="card-footer">
-    <%= paginate @contacts %>
-  </div>
+
+
 </div>
