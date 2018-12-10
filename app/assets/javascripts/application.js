@@ -47,4 +47,17 @@ document.addEventListener("turbolinks:load", function(event) {
     "hideMethod": "fadeOut"
   }
 
+});
+
+$(document).on('click', '.pagination a[data-remote=true], a.list-group-item', function() {  
+  history.pushState({}, '', $(this).attr('href'));
 })
+
+$(window).on('popstate', function(event) {  
+  // $.ajax({    
+  //   url: document.location.href,
+  //   method: "get",
+  //   dataType: 'script',
+  // });
+  $.get(document.location.href);
+});
