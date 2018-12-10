@@ -33,21 +33,8 @@
       <%= paginate @contacts, remote: true %>
     </div>
 
-
-    <div class="modal" tabindex="-1" role="dialog" id="form-modal">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="form-modal-title">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label=" Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" id="form-modal-body">            
-          </div>          
-        </div>
-      </div>
-    </div>
+    <%= render 'layouts/form_modal' %>
+    <%= render 'layouts/confirm_modal' %>
 
   </div>
 </div>
