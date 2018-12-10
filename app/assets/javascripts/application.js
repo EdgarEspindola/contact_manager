@@ -25,7 +25,7 @@ document.addEventListener("turbolinks:load", function(event) {
     minLength: 3,
     select: function (event, ui) {
       $('#term').val(ui.item.value);
-      $(this).closest('form').submit();
+      $('.btn-search').click();
     }
   });
 

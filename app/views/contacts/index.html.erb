@@ -25,12 +25,12 @@
       </div>
     </div>
     <div class="card-body">
-      <table class="table">
+      <table class="table" id="contacts">
         <%= render @contacts %>
       </table>
     </div>
-    <div class="card-footer">
-      <%= paginate @contacts %>
+    <div class="card-footer" id="paginator">
+      <%= paginate @contacts, remote: true %>
     </div>
   </div>
 
